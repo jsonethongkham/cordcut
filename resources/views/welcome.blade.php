@@ -8,7 +8,50 @@
       .v-label{
         width: 150px;
       }
-      
+
+      label {
+    display:block;
+    border:solid 1px gray;
+    line-height:40px;
+    height:40px;
+    width: 250px;
+    border-radius:40px;
+    -webkit-font-smoothing: antialiased; 
+    margin-top:10px;
+    font-family:Arial,Helvetica,sans-serif;
+    color:gray;
+    text-align:center;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+input:checked + label:active {
+    border: solid 1px red;
+    color: #F00;
+}
+
+      /*input.checky{
+        padding: 20px;
+      }
+      input.checky + label{
+        border: 1px solid grey;
+        background: ghoswhite;
+        padding: 5px 8px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      input.checky:not(:checked) + label:hover {
+        box-shadow: 0px 1px 3px;
+      }
+      input.checky + label:active,
+      input.checky:checked + label {
+        box-shadow: 0px 0px 3px inset;
+        background: red;
+      } */
+  
+
     </style>
 </head>
 
@@ -40,8 +83,8 @@
                             <v-container fluid width="80%">
                               <v-layout row wrap>
                                 <div v-for="channel in filteredChans">
-                                <v-checkbox v-model="choiceChan" :key="channel.id" :value="channel.value" :label="channel.value">
-                                </v-checkbox>
+                                  <input class="checky" type="checkbox" v-model="choiceChan" :key="channel.id" :value="channel.value" :label="channel.value"></input>
+                                  <label class="checklabel">@{{ channel.value }}</label>
                                 </div>
                               </v-layout>  
                             </v-container>

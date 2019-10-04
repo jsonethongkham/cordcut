@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/channelpick', function () {
+    return view('channelpicker');
+});
