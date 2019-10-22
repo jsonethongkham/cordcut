@@ -5,6 +5,7 @@
   <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
   <style>
+      body {background-color:#1976d2}
       input[type="search"] {
       -webkit-box-sizing: content-box;
       -moz-box-sizing: content-box;
@@ -46,9 +47,9 @@
 
 
 <body>
-    <div style="text-align: center">
-  <div id="app" style="width: 80%; height:90%; margin-top: 50px; display:inline-block">
-    <v-app style="height: 80%">
+    <div style="text-align: center; background-color: #1976d2">
+  <div id="app" style="width: 80%; height:90%; margin-top: 50px; display:inline-block; background-color:#1976d2">
+    <v-app style="height: 80%; background-color:#1976d2">
       
             <v-stepper v-model="e1" alt-labels>
                     <!-- Set up header for stepper, check for color changes-->
@@ -91,12 +92,12 @@
                             <v-tabs background-color="blue" slider-color="orange" grow>
                                 <v-tab ripple>Sling<br>@{{compareOrange().length}} / @{{compareBlue().length}} / @{{compareOrablu().length}}</v-tab>
                                 <v-tab ripple>PS Vue<br>@{{comparePSAccess().length}} / @{{comparePSCore().length}} / @{{comparePSElite().length}} / @{{comparePSUltra().length}}</v-tab>
-                                <v-tab ripple>DirecTV<br>@{{compareDir1().length}} / @{{compareDir2().length}} / @{{compareDir3().length}} / @{{compareDir4().length}} / @{{compareDir5().length}} / @{{compareDir6().length}}</v-tab>
+                                <v-tab ripple>AT&T NOW<br>@{{compareDir1().length}} / @{{compareDir2().length}} / @{{compareDir3().length}} / @{{compareDir4().length}} / @{{compareDir5().length}} / @{{compareDir6().length}}</v-tab>
                                 <v-tab ripple>Hulu<br>@{{compareHulu().length}}</v-tab>
                                 <v-tab ripple>YouTube<br>@{{compareYoutube().length}}</v-tab>
-                                <v-tab ripple>Philo<br>@{{comparePhilo1().length}} / @{{comparePhilo2().length}}</v-tab>
+                                <v-tab ripple>Philo<br>@{{comparePhilo1().length}}</v-tab>
                                 <v-tab ripple>Fubo<br>@{{compareFubo1().length}} / @{{compareFubo2().length}}</v-tab>
-                                <v-tab ripple>AT&T<br>@{{compareATT().length}}</v-tab>
+                                <v-tab ripple>AT&T Watch<br>@{{compareATT().length}}</v-tab>
 
 
                                <!--Sling-->
@@ -126,7 +127,7 @@
                                                         <li v-for="name in orangeKids()" :label="name">@{{name}}</li>
                                                       </ul>
                                                       <ul v-if="orangeSports().length > 0">
-                                                        <h4>Sports Extra($5):</h4>
+                                                        <h4>Sports Extra($10):</h4>
                                                         <li v-for="name in orangeSports()" :label="name">@{{name}}</li>
                                                       </ul>
                                                       <ul v-if="orangeComedy().length > 0">
@@ -314,7 +315,7 @@
                                         <!--PS Vue Access-->
                                       <v-card style="margin: 10px" width="250px" min-height="400px">
                                           <h2>Playstation Vue Access</h2><!-- Display Price and Name -->
-                                          <h4>$45 /month</h4><br>
+                                          <h4>$50 /month</h4><br>
                                           <v-container v-if="comparePSAccess().length > 0"><!--Display if missing channel(s) -->
                                             <v-divider></v-divider>
                                             <h3>Missing Channels:</h3>
@@ -349,7 +350,7 @@
                                       <!--PS Vue Core-->
                                       <v-card style="margin: 10px" width="250px" min-height="400px">
                                           <h2>Playstation Vue Core</h2><!-- Display Price and Name -->
-                                          <h4>$50 /month</h4><br>
+                                          <h4>$55 /month</h4><br>
                                           <v-container v-if="comparePSCore().length > 0"><!--Display if missing channel(s) -->
                                             <v-divider></v-divider>
                                             <h3>Missing Channels:</h3>
@@ -383,7 +384,7 @@
                                     <!--PS Vue Elite-->
                                     <v-card style="margin: 10px" width="250px" min-height="400px">
                                         <h2>Playstation Vue Elite</h2><!-- Display Price and Name -->
-                                        <h4>$60 /month</h4><br>
+                                        <h4>$65 /month</h4><br>
                                         <v-container v-if="comparePSElite().length > 0"><!--Display if missing channel(s) -->
                                           <v-divider></v-divider>
                                           <h3>Missing Channels:</h3>
@@ -417,7 +418,7 @@
                                     <!--PS Vue Ultra-->
                                     <v-card style="margin: 10px" width="250px" min-height="400px">
                                         <h2>Playstation Vue Ultra</h2><!-- Display Price and Name -->
-                                        <h4>$80 /month</h4><br>
+                                        <h4>$85 /month</h4><br>
                                         <v-container v-if="comparePSUltra().length > 0"><!--Display if missing channel(s) -->
                                           <v-divider></v-divider>
                                           <h3>Missing Channels:</h3>
@@ -450,13 +451,13 @@
 
                               </v-tab-item>
 
-                              <!--Directv-->
+                              <!--AT&T TV Now-->
                               <v-tab-item>
                                   <v-container fluid center-align justify-center>
                                       <v-layout xs4 row center-align justify-center>
-                                    <!--Directv Now 1-->
+                                    <!--AT&T TV Now 1-->
                                     <v-card style="margin: 10px" width="250px" min-height="400px">
-                                        <h2>DIRECTV NOW</h2>
+                                        <h2>AT&T TV NOW</h2>
                                         <h3>"Plus"</h3><!-- Display Price and Name -->
                                         <h4>$50 /month</h4><br>
                                         <v-container v-if="compareDir1().length > 0"><!--Display if missing channel(s) -->
@@ -491,9 +492,9 @@
                                         </v-container>
                                     </v-card>
 
-                                    <!--Directv Now 2-->
+                                    <!--AT&T TV Now 2-->
                                     <v-card style="margin: 10px" width="250px" min-height="400px">
-                                        <h2>DIRECTV NOW</h2>
+                                        <h2>AT&T TV NOW</h2>
                                         <h3>"Max"</h3><!-- Display Price and Name -->
                                         <h4>$70 /month</h4><br>
                                         <v-container v-if="compareDir2().length > 0"><!--Display if missing channel(s) -->
@@ -528,9 +529,9 @@
                                         </v-container>
                                     </v-card>
 
-                                    <!--Directv Now 3-->
+                                    <!--AT&T TV Now 3-->
                                     <v-card style="margin: 10px" width="250px" min-height="400px">
-                                        <h2>DIRECTV NOW</h2>
+                                        <h2>AT&T TV NOW</h2>
                                         <h3>"Entertainment"</h3><!-- Display Price and Name -->
                                         <h4>$93 /month</h4><br>
                                         <v-container v-if="compareDir3().length > 0"><!--Display if missing channel(s) -->
@@ -565,9 +566,9 @@
                                         </v-container>
                                     </v-card>
 
-                                    <!--Directv Now 4-->
+                                    <!--AT&T TV Now 4-->
                                     <v-card style="margin: 10px" width="250px" min-height="400px">
-                                        <h2>DIRECTV NOW</h2>
+                                        <h2>AT&T TV NOW</h2>
                                         <h3>"Choice"</h3><!-- Display Price and Name -->
                                         <h4>$110 /month</h4><br>
                                         <v-container v-if="compareDir4().length > 0"><!--Display if missing channel(s) -->
@@ -602,9 +603,9 @@
                                         </v-container>
                                     </v-card>
 
-                                    <!--Directv Now 5-->
+                                    <!--AT&T TV Now 5-->
                                     <v-card style="margin: 10px" width="250px" min-height="400px">
-                                      <h2>DIRECTV NOW</h2>
+                                      <h2>AT&T TV NOW</h2>
                                       <h3>"Xtra"</h3><!-- Display Price and Name -->
                                       <h4>$124 /month</h4><br>
                                       <v-container v-if="compareDir5().length > 0"><!--Display if missing channel(s) -->
@@ -639,9 +640,9 @@
                                       </v-container>
                                   </v-card>
 
-                                   <!--Directv Now 6-->
+                                   <!--AT&T TV Now 6-->
                                    <v-card style="margin: 10px" width="250px" min-height="400px">
-                                    <h2>DIRECTV NOW</h2>
+                                    <h2>AT&T TV NOW</h2>
                                     <h3>"Ultimate"</h3><!-- Display Price and Name -->
                                     <h4>$135 /month</h4><br>
                                     <v-container v-if="compareDir6().length > 0"><!--Display if missing channel(s) -->
@@ -774,8 +775,8 @@
                                     <v-layout xs4 row center-align justify-center>
                                       <!--Philo TV First Package -->
                                     <v-card style="margin: 10px" width="250px" min-height="450px">
-                                        <h2>Philo Package 1</h2><!-- Display Price and Name -->
-                                        <h4>$16 /month</h4><br>
+                                        <h2>Philo</h2><!-- Display Price and Name -->
+                                        <h4>$20 /month</h4><br>
                                         <v-container v-if="comparePhilo1().length > 0"><!--Display if missing channel(s) -->
                                           <v-divider></v-divider>
                                           <h3>Missing Channels:</h3>
@@ -800,33 +801,7 @@
                                         </v-container>
                                     </v-card>
 
-                                      <!--Philo TV Second Package -->                        
-                                      <v-card style="margin: 10px" width="250px" min-height="450px">
-                                        <h2>Philo Package 2</h2><!-- Display Price and Name -->
-                                        <h4>$20 /month</h4><br>
-                                        <v-container v-if="comparePhilo2().length > 0"><!--Display if missing channel(s) -->
-                                          <v-divider></v-divider>
-                                          <h3>Missing Channels:</h3>
-                                              <ul>
-                                                <li v-for="name in comparePhilo2()" :label="name" >@{{name}}</li>
-                                              </ul>
-                                        </v-container>
-                                        <v-container v-else><!-- Else display -->
-                                          <v-divider></v-divider>
-                                          <h3>No Missing Channels</h3>
-                                        </v-container>
-                                        <v-container>
-                                        <br><v-divider></v-divider>
-                                        <h3>Number of Streams:</h3><!--show number of streams -->
-                                        <h3>3 At Once</h3>
-                                        <br>
-                                        <h3>DVR Options:</h3>
-                                        <h3>Unlimited Cloud Recording</h3>
-                                        <p>**Recordings stay for 30 days</p>
-                                        <br>
-                                        <a href="https://try.philo.com/" target="_blank">More Info</a><!--Link for more info-->
-                                        </v-container>
-                                      </v-card>    
+                                      
                                     </v-layout>
                                   </v-container>
                               </v-tab-item>
@@ -837,8 +812,8 @@
                                       <v-layout xs4 row center-align justify-center>
                                         <!--FuboTV First Package -->                        
                                     <v-card style="margin: 10px" width="250px" min-height="450px">
-                                        <h2>FuboTV</h2><!-- Display Price and Name -->
-                                        <h4>$45 /month</h4><br>
+                                        <h2>fubo Standard</h2><!-- Display Price and Name -->
+                                        <h4>$55 /month</h4><br>
                                         <v-container v-if="compareFubo1().length > 0"><!--Display if missing channel(s) -->
                                           <v-divider></v-divider>
                                           <h3>Missing Channels:</h3>
@@ -874,8 +849,8 @@
 
                                       <!--FuboTV Extra-->
                                         <v-card style="margin: 10px" width="250px" min-height="400px">
-                                          <h2>FuboTV Extra</h2><!-- Display Price and Name -->
-                                          <h4>$50 /month</h4><br>
+                                          <h2>fubo Family</h2><!-- Display Price and Name -->
+                                          <h4>$55 /month</h4><br>
                                           <v-container v-if="compareFubo2().length > 0"><!--Display if missing channel(s) -->
                                             <v-divider></v-divider>
                                             <h3>Missing Channels:</h3>
@@ -909,6 +884,44 @@
                                           <a href="https://www.fubo.tv/welcome" target="_blank">More Info</a><!--Link for more info-->
                                           </v-container>
                                         </v-card>
+
+                                        <!--FuboTV Ultra-->
+                                        <v-card style="margin: 10px" width="250px" min-height="400px">
+                                            <h2>fubo Ultra</h2><!-- Display Price and Name -->
+                                            <h4>$80 /month</h4><br>
+                                            <v-container v-if="compareFubo2().length > 0"><!--Display if missing channel(s) -->
+                                              <v-divider></v-divider>
+                                              <h3>Missing Channels:</h3>
+                                                  <ul>
+                                                    <li v-for="name in compareFubo2()" :label="name" >@{{name}}</li>
+                                                  </ul>
+                                            </v-container>
+                                            <v-container v-else><!-- Else display -->
+                                              <v-divider></v-divider>
+                                              <h3>No Missing Channels</h3>
+                                            </v-container>
+                                            <v-container v-if="showtime().length > 0 || fubosport1().length > 0">
+                                              <h3>Add-Ons Needed:</h3>                                            
+                                              <h4 v-if="showtime().length > 0">Showtime Add-on($11)</h4>
+                                              <h4 v-if="fubosport1().length > 0">Sports Pass($9) for:</h4>
+                                              <ul>
+                                                <li v-for="name in fubosport1()" :label="name">@{{name}}</li>
+                                              </ul>
+                                            </v-container>
+                                            
+                                            <v-container>
+                                            <br><v-divider></v-divider>
+                                            <h3>Number of Streams:</h3><!--show number of streams -->
+                                            <h3>2 At Once</h3>
+                                            <p>Add a 3rd for $5.99/month</p>
+                                            <br>
+                                            <h3>DVR Options:</h3>
+                                            <h3>30 Hours of Cloud Storage</h3>
+                                            <p>500 Hours Available for $9.99/month</p>
+                                            <br>
+                                            <a href="https://www.fubo.tv/welcome" target="_blank">More Info</a><!--Link for more info-->
+                                            </v-container>
+                                          </v-card>
                                         </v-layout>
                                     </v-container>
                               </v-tab-item>
@@ -987,10 +1000,7 @@
             'DIY', 'FYI', 'Destination America'
           ],
           philo1:[
-            'A&E', 'AMC', 'Animal Planet', 'BBC America', 'BET', 'CMT', 'Comedy Central', 'Discovery', 'DIY', 'Food', 'FYI', 'GSN', 'Hallmark', 'HGTV', 'IFC', 'Investigation Discovery', 'Lifetime', 'MTV', 'Nick', 'Nick Jr.', 'Sundance TV', 'Tastemade', 'History', 'TLC', 'Travel', 'VH1', 'We TV'
-          ],
-          philo2:[
-            'A&E', 'AMC', 'Animal Planet', 'BBC America', 'BET', 'CMT', 'Comedy Central', 'Destination America', 'Discovery', 'DIY', 'Food', 'FYI', 'GSN', 'Hallmark', 'HGTV', 'History', 'IFC', 'Investigation Discovery', 'Lifetime', 'MTV', 'Nick', 'Nick Jr.', 'Nicktoons', 'Sundance TV', 'Tastemade', 'TLC', 'Travel', 'VH1', 'We TV'
+            'A&E', 'AMC', 'Animal Planet', 'BBC America', 'BET', 'CMT', 'Comedy Central', 'Destination America', 'Discovery', 'DIY', 'Food', 'FYI', 'GSN', 'Hallmark','Nicktoons', 'HGTV', 'History', 'IFC', 'Investigation Discovery', 'Lifetime', 'MTV', 'Nick', 'Nick Jr.', 'Sundance TV', 'Tastemade', 'TLC', 'Travel', 'VH1', 'We TV'
           ],
           fubo1:[
             'Showtime', 'Tennis Channel', 'Universo', 'FS1', 'NBCSN','NFL Network', 'NBA TV', 'A&E', 'AMC', 'BBC America', 'E!', 'Bravo', 'CNN', 'Food', 'Fox News', 'FX', 'HGTV', 'History', 'MSNBC', 'TNT', 'TBS', 'USA', 'National Geographic', 'Golf', 'Hallmark', 'IFC', 'Lifetime', 'Sundance TV', 'Turner Classic Movies', 'Syfy', 'TruTV', 'Oxygen', 'Nat Geo Wild', 'FXX', 'Telemundo', 'Travel', 'CNBC', 'Weather Channel', 'HLN', 'Adult Swim', 'Cartoon Network', 'Galavision', 'Universo', 'FYI', 'Pop', 'Universal Kids', 'We TV', 'Smithsonian Channel'
@@ -1107,7 +1117,7 @@
             'Starz'
           ],
           youtube:[
-            'Discovery', 'HGTV', 'Food', 'TLC', 'Investigation Discovery', 'Animal Planet', 'Travel', 'NBC', 'CBS', 'National Geographic', 'Smithsonian Channel', 'NBCSN', 'Bravo', 'CW', 'ABC', 'TruTV', 'MSNBC', 'Cartoon Network', 'Pop', 'Golf', 'HLN', 'Tastemade', 'CNN', 'CNBC', 'Universal Kids', 'AMC', 'NBA TV', 'Freeform', 'Turner Classic Movies', 'FX', 'ESPN', 'Fox News', 'Oxygen', 'BBC America', 'Showtime', 'Telemundo', 'FS1', 'USA', 'TBS', 'TNT', 'MLB Network', 'Disney', 'Starz', 'Sundance TV', 'E!', 'Comet TV', 'IFC', 'FOX', 'Disney', 'Disney Junior', 'Disney XD', 'SEC Network', 'ESPN2', 'FXX', 'Nat Geo Wild', 'Start TV', 'Syfy', 'Tennis Channel', 'We TV', 'Universo'
+            'TLC', 'Discovery', 'HGTV', 'Food', 'TLC', 'Investigation Discovery', 'Animal Planet', 'Travel', 'NBC', 'CBS', 'National Geographic', 'NBCSN', 'Bravo', 'ABC', 'TruTV', 'MSNBC', 'Cartoon Network', 'Pop', 'Golf', 'HLN', 'Tastemade', 'CNN', 'CNBC', 'Universal Kids', 'Smithsonian Channel', 'AMC', 'NBA TV', 'Freeform', 'Turner Classic Movies', 'FX', 'ESPN', 'Fox News', 'Oxygen', 'BBC America', 'Showtime', 'Telemundo', 'FS1', 'USA', 'TBS', 'TNT', 'MLB Network', 'Disney', 'Starz', 'Sundance TV', 'E!', 'Comet TV', 'IFC', 'FOX', 'Disney', 'Disney Junior', 'Disney XD', 'SEC Network', 'ESPN2', 'FXX', 'Nat Geo Wild', 'Start TV', 'Syfy', 'Tennis Channel', 'We TV', 'Universo'
           ],
           fubosprt:[
             'Universo', 'Tennis Channel'
