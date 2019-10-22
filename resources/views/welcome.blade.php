@@ -5,6 +5,17 @@
   <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
   <style>
+      input[type="search"] {
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+      -webkit-appearance: searchfield;
+      }
+
+      input[type="search"]::-webkit-search-cancel-button {
+      -webkit-appearance: searchfield-cancel-button;
+      }
+
       .v-label{
         width: 150px;
       }
@@ -57,12 +68,13 @@
                       <v-stepper-content step="1">
                           <h3>Add Channels That You Want:</h3>
                           <v-card class="mb-5" color="white" height="80%" style="min-height:500px">
-                            <input type="search" v-model="searchBar" placeholder="Search Channel" style="width:400px; padding: 12px 20px; margin-top: 30px; box-sizing: border-box; border: 2px solid;">
+                            <input type="search" v-model="searchBar" placeholder="Search Channel" style="width:400px; padding: 12px 20px; margin-top: 30px; box-sizing: border-box; border: 2px solid;"><br>
+                            <v-btn color="primary" @click="clearSelected()" style="margin:15px">Clear Selected Channels</v-btn>
                             <v-container fluid width="80%">
-                              <v-layout row wrap style="justify-content: center">
+                              <v-layout row wrap style="justify-content: center; height: 450px; overflow-y:auto">
                                 <div  v-for="channel in filteredChans">
                                   
-                                  <label class="checklabel"><input class="checky" type="checkbox" v-model="choiceChan" :key="channel.id" :value="channel.value" :label="channel.value"><span>@{{ channel.value }}</span></label>
+                                  <label class="checklabel"><input class="checky" type="checkbox" v-model="choiceChan" :key="channel" :value="channel" :label="channel"><span>@{{ channel }}</span></label>
                                 </div>
                               </v-layout>  
                             </v-container>
@@ -967,89 +979,7 @@
           searchBar: '',
           e1: 0,        
           choiceChan: [],
-          channels: [
-            { id: 1, value: 'A&E'},
-            { id: 2, value: 'ABC'},
-            { id: 4, value: 'AMC'},
-            { id: 5, value: 'Animal Planet'},
-            { id: 6, value: 'BBC America'},
-            { id: 7, value: 'BET'},
-            { id: 8, value: 'Bravo'},
-            { id: 9, value: 'Cartoon Network'},
-            { id: 10, value: 'CBS'},
-            { id: 77, value: 'CMT'},
-            { id: 11, value: 'CNN'},
-            { id: 12, value: 'CNBC'},
-            { id: 13, value: 'Comedy Central'},
-            { id: 14, value: 'Comet TV'},
-            { id: 15, value: 'CW'},
-            { id: 16, value: 'Destination America'},
-            { id: 78, value: 'Discovery'},
-            { id: 17, value: 'Disney'},
-            { id: 18, value: 'Disney Junior'},
-            { id: 19, value: 'Disney XD'},
-            { id: 20, value: 'DIY' }, 
-            { id: 21, value: 'E!' },
-            { id: 22, value: 'ESPN' },
-            { id: 23, value: 'ESPN2' },
-            { id: 24, value: 'Food' },
-            { id: 25, value: 'FOX' },
-            { id: 26, value: 'Fox News' },
-            { id: 27, value: 'FS1' },
-            { id: 28, value: 'Freeform' },
-            { id: 29, value: 'FX' },
-            { id: 30, value: 'FXX' },
-            { id: 31, value: 'FYI' },
-            { id: 32, value: 'Galavision' },
-            { id: 33, value: 'GSN' },
-            { id: 34, value: 'Golf' },
-            { id: 36, value: 'Hallmark' },
-            { id: 37, value: 'HGTV' },
-            { id: 38, value: 'History' },
-            { id: 39, value: 'HLN' },
-            { id: 40, value: 'IFC' },
-            { id: 41, value: 'Investigation Discovery' },
-            { id: 42, value: 'Lifetime' },
-            { id: 43, value: 'MLB Network' },
-            { id: 44, value: 'MSNBC' },
-            { id: 45, value: 'MTV' },
-            { id: 46, value: 'National Geographic' },
-            { id: 47, value: 'Nat Geo Wild' },
-            { id: 48, value: 'NBA TV' },
-            { id: 49, value: 'NBC' },
-            { id: 50, value: 'NBCSN' },
-            { id: 51, value: 'Nick' },
-            { id: 52, value: 'Nick Jr.'},
-            { id: 53, value: 'Nicktoons' },
-            { id: 54, value: 'Oxygen' },
-            { id: 55, value: 'Pop' },
-            { id: 80, value: 'RFD' },
-            { id: 56, value: 'SEC Network' },
-            { id: 57, value: 'Smithsonian Channel' },
-            { id: 58, value: 'Start TV' },
-            { id: 59, value: 'Sundance TV' },
-            { id: 60, value: 'Syfy' },
-            { id: 61, value: 'Tastemade' },
-            { id: 62, value: 'TBS' },
-            { id: 63, value: 'Telemundo' },
-            { id: 64, value: 'Tennis Channel' },
-            { id: 65, value: 'TLC' },
-            { id: 66, value: 'TNT'},
-            { id: 67, value: 'Travel' },
-            { id: 68, value: 'TruTV' },
-            { id: 69, value: 'Turner Classic Movies' },
-            { id: 70, value: 'Universal Kids' },
-            { id: 71, value: 'Universo'},
-            { id: 72, value: 'USA' },
-            { id: 73, value: 'VH1' },
-            { id: 74, value: 'Weather Channel'},
-            { id: 75, value: 'We TV'},
-            { id:76, value: 'NFL Network'},    
-            { id:81, value: 'HBO'},
-            { id:82, value: 'Showtime'},  
-            { id:83, value: 'Cinemax'}, 
-            { id:84, value: 'Starz'} 
-          ],
+          channels: {!! $channels !!},
           hulu:[
             'HBO', 'Showtime', 'Cinemax', 'Starz', 'DIY', 'FYI', 'Destination America', 'Oxygen', 'ABC', 'CBS', 'FOX', 'NBC', 'A&E', 'Animal Planet', 'Bravo', 'Cartoon Network', 'CNBC', 'CNN', 'CW', 'Discovery', 'Disney', 'Disney Junior', 'Disney XD', 'E!', 'ESPN', 'ESPN2', 'Food', 'Fox News', 'FS1', 'Freeform', 'FX', 'FXX', 'Golf', 'HGTV', 'History', 'HLN', 'Investigation Discovery', 'Lifetime', 'MSNBC', 'National Geographic', 'Nat Geo Wild', 'NBCSN', 'Pop', 'Smithsonian Channel', 'SEC Network', 'Syfy', 'Telemundo','TBS', 'Turner Classic Movies', 'TLC', 'TNT', 'Travel', 'TruTV', 'Universal Kids', 'USA' 
           ],
@@ -1191,12 +1121,15 @@
     computed:{
       filteredChans(){
         return this.channels.filter(channels =>{
-          return channels.value.toLowerCase().includes(this.searchBar.toLowerCase())
+          return channels.toLowerCase().includes(this.searchBar.toLowerCase())
         })
       }
     },
       
     methods: {
+      clearSelected: function(){
+        this.choiceChan = [];
+      },
       compareHulu: function(){
         diff = $(this.choiceChan).not(this.hulu).get();
         return diff;

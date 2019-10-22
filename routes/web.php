@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/channelpick', function () {
-    return view('channelpicker');
+
+Route::get('/', function () {
+    $channels = DB::table('channels')->get()->toArray();
+    $purge =[];
+    foreach($channels as $chan){
+        array_push($purge, $chan->name);
+    }
+    //dd(json_encode(array_values($purge)));
+    return view('welcome', ['channels' => json_encode(array_values($purge))]);
 });
